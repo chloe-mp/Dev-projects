@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello world</title>
+    <style>
+
+/* Styles globaux */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'San Francisco', Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #000;
+    color: #fff;
+}
+
+/* Styles de l'en-tête */
+header {
+    background-color: #000;
+    padding: 10px 0;
+    text-align: right;
+}
+
+nav {
+    text-align: center;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0 auto; /* Centre le ul */
+    display: inline-block; /* Permet au ul de ne prendre que l'espace nécessaire */
+    margin-left: 40%; /* Ajustez cette valeur pour décaler vers la droite */
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 12px; /* Taille de police approximative utilisée par Apple */
+    font-weight: thin; /* Apple utilise généralement une graisse normale ou semi-grasse */
+    letter-spacing: 0.2px; /* Ajustement fin pour l'espacement des lettres */
+}
+
+nav ul li a:hover {
+    color: #007bff;
+}
+
+/* Styles de la zone de contenu principale */
+.content-area {
+    flex: 1; /* Permet au contenu de se développer et de remplir l'espace disponible */
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.content-area h1 {
+    font-size: 4em; /* Taille de la police pour le titre */
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.content-area p {
+    font-size: 1.25em;
+    max-width: 800px;
+    margin: auto;
+    color: rgb(134, 134, 139)
+}
+
+.first-sentence {
+    color: #fff; /* Couleur blanche pour la première phrase */
+}
+
+/* Styles pour la section contact */
+section#Contact {
+    padding: 10px 0;
+    text-align: center;
+}
+
+section#Contact a {
+    color: #007AFF;
+    font-weight: bold;
+    text-decoration: none;
+    padding-right: 10px;
+    margin-right: 10px;
+    display: inline-block; /* Pour aligner les liens côte à côte */
+}
+
+/* Styles du pied de page */
+footer {
+    background-color: #000;
+    text-align: center;
+    padding: 20px 0;
+    color: #fff;
+}
+
+/* Styles pour ajuster l'apparence sur les petits écrans */
+@media (max-width: 600px) {
+    .content-area h1 {
+        font-size: 2em;
+    }
+
+    .content-area p {
+        font-size: 1em;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}
+.image-principale {
+    max-width: 100%; /* S'assure que l'image ne dépasse pas la largeur du conteneur */
+    height: auto; /* Garde le ratio de l'image */
+    display: block; /* Assure que l'image est alignée correctement */
+    margin: 20px auto; /* Ajoute une marge en haut et en bas et centre l'image horizontalement */
+    border-radius: 50%; /* Rend l'image ronde */
+    width: 200px; /* Définissez une largeur fixe */
+    height: 200px; /* Définissez une hauteur égale à la largeur pour un cercle parfait */
+}
+
+    </style>
+</head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Présentation</a></li>
+                    <li><a href="experiences.html">Expériences</a></li>
+                    <li><a href="formation.html">Formation</a></li>
+                    <li><a href="certifications.html">Certifications</a></li>
+                </ul>
+            </nav>
+        </header>
+
+    <main class="content-area">
+        <h1>Hello world</h1>
+        <p>
+        <span class="first-sentence">Je suis Chloé Petridis, étudiante en master 1 Traitement Automatique des Langues à l'université Sorbonne Paris Nord </span> et j'ai toujours été passionnée par les langues et l'informatique.
+        Ici vous trouverez une présentation de mon parcours professionnel et universitaire ainsi qu'un lien vers mon compte Github où vous trouverez mes projets.
+        N'hésitez pas à me contacter. 
+        </p>
+        <img src="https://media.licdn.com/dms/image/D4E03AQFvknz2E3DeGA/profile-displayphoto-shrink_800_800/0/1701080049392?e=1712188800&v=beta&t=AnnSnkBVNYtDsQNwj2bKx7Fk9Y4TkJi2v3yd0DpzvKI" class="image-principale"/>
+    </main>
+
+        <section id="Contact">
+            <a href="https://www.linkedin.com/in/chloe-petridis/" class="linkedin-link">LinkedIn</a>
+            <a href="mailto:chloe.petridis@gmail.com" class="email-link">Email</a>
+            <a href="https://github.com/chloe-mp" class="github-link">Github</a>
+        </section>
+    <footer>
+        <p>© 2023 Chloé Petridis. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>

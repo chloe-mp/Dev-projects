@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <style>
+ 
+body {
+    background-color: #000;
+    color: rgb(134, 134, 139);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #000;
+    padding: 10px 0;
+    text-align: center;
+}
+
+a {
+    color: #007bff;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+body {
+    font-family: 'San Francisco', Arial, sans-serif;
+}
+
+h1 {
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-weight: bold;
+    color: #fff;
+    margin: 20px 0;
+}
+
+h3 {
+    font-weight: bold;
+    color: #4da2ff;
+    margin: 20px 0;
+}
+
+h4 {
+    font-weight: bold;
+    color: #fff;
+    margin: 20px 0;
+}
+
+nav {
+    text-align: center;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0 auto; /* Centre le ul */
+    display: inline-block; /* Permet au ul de ne prendre que l'espace nécessaire */
+    margin-left: 40%; /* Ajustez cette valeur pour décaler vers la droite */
+}
+    
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 12px; /* Taille de police approximative utilisée par Apple */
+    font-weight: thin; /* Apple utilise généralement une graisse normale ou semi-grasse */
+    letter-spacing: 0.2px; /* Ajustement fin pour l'espacement des lettres */
+}
+nav ul li a:hover {
+            color: #007bff;
+}
+
+        /* Styles pour les sections à animer */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%; 
+}
+
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff; 
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+section {
+    background-color: #000;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+section:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+@media screen and (max-width: 600px) {
+    nav ul li {
+        display: block;
+        text-align: center;
+        margin: 10px 0;
+}
+}
+
+.hero {
+    padding: 30px 10px;
+}
+
+.formation {
+    margin-bottom: 50px; /* Espacement en bas de chaque élément de formation */
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.formation.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+    </style>
+
+    <meta charset="UTF-8">
+    <title>Chloé Petridis</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Présentation</a></li>
+                <li><a href="experiences.html">Expériences</a></li>
+                <li><a href="formation.html">Formation</a></li>
+                <li><a href="certifications.html">Certifications</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+    <section id="formation">
+        <div class="formation">
+            <h3>Master Traitement Automatique des Langues, 1re année</h3>
+            <h4>Université Sorbonne Paris Nord (2023 - 2024)</h4>
+            <p>Algorithmique, statistiques (R), Shell, Python,
+            SQL, PHP, HTML/CSS, XML, XQuery, REST, Unitex</p>
+        </div>
+
+        <div class="formation">
+            <h3>Licence Sciences du Langage, spécialité Linguistique Informatique</h3>
+            <h4> Sorbonne Université (2023)</h4>
+            <p>Anglais LV1, russe LV2, Python (Pandas,
+            DataFrame, Sklearn, Spacy), SPARQL,
+            Protege, R, Excel</p>
+        </div>
+
+        <div class="formation">
+            <h3>Licence Langues, Littérature et Civilisation Étrangère et Régionale ANGLAIS, spécialité Français Langue Étrangère</h3>
+            <h4>Université de Pau et des Pays de l'Adour (2021)</h4>
+            <p>Stage intensif d'1 semaine d’apprentissage du chinois en début de 3e année dans le cadre de la spécialité Français Langue Étrangère</p>
+        </div>
+    </section>
+    </main>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+    
+        const formations = document.querySelectorAll('.formation');
+        formations.forEach(formation => observer.observe(formation));
+    });
+    </script>
+    </head>
+</html>

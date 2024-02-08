@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <style> 
+body {
+    background-color: #000;
+    color: rgb(134, 134, 139);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #000;
+    padding: 10px 0;
+    text-align: center;
+}
+
+a {
+    color: #007bff;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+body {
+    font-family: 'San Francisco', Arial, sans-serif;
+}
+
+h1 {
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-weight: bold;
+    color: #fff;
+    margin: 20px 0;
+}
+
+h3 {
+    font-weight: bold;
+    color: #4da2ff;
+    margin: 20px 0;
+}
+
+h4 {
+    font-weight: bold;
+    color: #fff;
+    margin: 20px 0;
+}
+
+nav {
+    text-align: center;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0 auto;
+    display: inline-block; 
+    margin-left: 40%; 
+}
+    
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 12px; 
+    font-weight: thin; 
+    letter-spacing: 0.2px; 
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%; 
+}
+
+
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff; 
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+section {
+    background-color: #000;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+section:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+@media screen and (max-width: 600px) {
+    nav ul li {
+        display: block;
+        text-align: center;
+        margin: 10px 0;
+}
+}
+.hero {
+    padding: 30px 10px;
+}
+
+.experiences {
+    margin-bottom: 50px; 
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.experiences.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+    
+    </style>
+    <meta charset="UTF-8">
+    <title>Chloé Petridis</title>
+    <link rel="stylesheet" href="style.css">
+
+    <body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Présentation</a></li>
+                <li><a href="experiences.html">Expériences</a></li>
+                <li><a href="formation.html">Formation</a></li>
+                <li><a href="certifications.html">Certifications</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+    <section id="experiences">
+        <div class="experiences">
+            <h3>Professeure particulier</h3>
+            <h4>Septembre 2022 - Juin 2023</h4>
+            <p>Soutien scolaire en anglais, espagnol et
+            mathématiques pour un collégien de 5e.</p>
+        </div>
+    
+        <div class="experiences">
+            <h3>Mentor (Exercism)</h3>
+            <h4>Janvier 2023 - aujourd'hui</h4>
+            <p>Exercism est une plateforme en ligne
+            d'apprentissage de la programmation
+            informatique. Je contribue en tant que
+            mentor sur cette plateforme pour le langage
+            Python.</p>
+
+        </div>
+
+    <div class="experiences">
+        <h3>Assistante pédagogique (école primaire de Claracq - 64)</h3>
+        <h4>Septembre 2021 - Juillet 2022</h4>
+        <p>Enseignement de l'anglais en école primaire,
+        conduite d'activités pédagogiques, assistance
+        des enseignants, encadrement.</p>
+    </div>
+
+    <div class="experiences">
+        <h3>Traductrice (Coursera)</h3>
+        <h4>Mai 2021 - aujourd'hui</h4>
+        <p>Traduction des cours et du contenu de la
+        plateforme de MOOC Coursera (de l'anglais
+        au français).
+        Membre de la Coursera Global Translator
+        Community (communauté française).</p>
+    </div>
+    </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    } else {
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+        
+            const experiences = document.querySelectorAll('.experiences');
+            experiences.forEach(experiences => observer.observe(experiences));
+        });
+        </script>
+        </head>
+    </html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Chloé Petridis</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+body {
+    background-color: #000;
+    color: rgb(134, 134, 139);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #000;
+    padding: 10px 0;
+    text-align: center;
+}
+
+a {
+    color: #007bff;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+body {
+    font-family: 'San Francisco', Arial, sans-serif;
+}
+
+h1 {
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+h2, h3, h4 {
+    font-weight: bold;
+    color: #fff;
+    margin: 20px 0;
+}
+
+nav {
+    text-align: center;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0 auto;
+    display: inline-block; 
+    margin-left: 40%; 
+}
+    
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 12px; 
+    font-weight: thin; 
+    letter-spacing: 0.2px; 
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%; 
+}
+
+
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff; 
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+section {
+    background-color: #000;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+section:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+@media screen and (max-width: 600px) {
+    nav ul li {
+        display: block;
+        text-align: center;
+        margin: 10px 0;
+}
+}
+.hero {
+    padding: 30px 10px;
+}
+
+.certifications {
+    margin-top: 100px;
+    margin-bottom: 50px; 
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.certifications.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.freecodecamp-link, .kaggle-link {
+    display: block; /* Cela met chaque lien sur sa propre ligne */
+    margin-bottom: 10px; /* Espacement entre les liens */
+    color: #007bff; /* Couleur des liens */
+    text-decoration: none; /* Enlève le soulignement des liens */
+    transition: color 0.3s; /* Transition douce pour le survol */
+}
+
+.freecodecamp-link:hover, .kaggle-link:hover {
+    color: #0056b3; /* Couleur des liens au survol */
+}
+
+</style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Présentation</a></li>
+                <li><a href="experiences.html">Expériences</a></li>
+                <li><a href="formation.html">Formation</a></li>
+                <li><a href="certifications.html">Certifications</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="Certifications">
+        <h2>Mes certifications</h2>
+        <div class="certifications">
+            <a href="https://www.freecodecamp.org/certification/chloem1998/responsive-web-design" class="freecodecamp-link">Responsive Web Design</a>
+        </div>
+        <div class="certifications">
+            <a href="https://www.freecodecamp.org/certification/chloem1998/scientific-computing-with-python-v7" class="freecodecamp-link">Scientific computing with Python</a>
+        </div>
+        <div class="certifications">
+            <a href="https://www.kaggle.com/learn/certification/chloemp/pandas" class="kaggle-link">Pandas</a>
+        </div>
+        <div class="certifications">
+            <a href="https://www.kaggle.com/learn/certification/chloemp/intermediate-machine-learning" class="kaggle-link">Intermediate machine learning</a>
+        </div>
+    </section>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            console.log("Intersection:", entry);
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            } else {
+                entry.target.classList.remove('visible');
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    const certifications = document.querySelectorAll('.certifications');
+    certifications.forEach(certifications => {
+        observer.observe(certifications);
+    });
+});
+
+    </script>
+</body>        
+</html>
